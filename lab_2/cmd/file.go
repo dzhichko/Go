@@ -17,9 +17,9 @@ func mergeSort(arr []int) []int {
 }
 
 func merge(left, right []int) []int {
-	var result []int
-	for len(left) > 0 && len(right) > 0 {
-		if left[0] >= right[0] {
+	result := make([]int, 0, len(left)+len(right))
+	for len(left) > 0 || len(right) > 0 {
+		if len(right) == 0 || len(left) > 0 && left[0] <= right[0] {
 			result = append(result, left[0])
 			left = left[1:]
 		} else {
@@ -27,7 +27,5 @@ func merge(left, right []int) []int {
 			right = right[1:]
 		}
 	}
-	result = append(result, left...)
-	result = append(result, right...)
 	return result
 }

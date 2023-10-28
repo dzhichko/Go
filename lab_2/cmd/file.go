@@ -12,7 +12,9 @@ func insertionSort(arr []int) {
 
 	for i := 1; i < e; i++ {
 		for j := 0; j < i; j++ {
-			arr[j], arr[i] = arr[i], arr[j]
+			if arr[j] < arr[i] {
+				arr[j], arr[i] = arr[i], arr[j]
+			}
 		}
 	}
 }

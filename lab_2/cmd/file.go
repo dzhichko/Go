@@ -1,20 +1,24 @@
 package main
 
 func findKthLargest(nums []int, k int) int {
-
-	insertionSort(nums)
-
-	return nums[k-1]
+	nums = quickSort(nums)
+	return nums[len(nums)-k]
 }
 
-func insertionSort(arr []int) {
-	e := len(arr)
-
-	for i := 1; i < e; i++ {
-		for j := 0; j < i; j++ {
-			if arr[j] < arr[i] {
-				arr[j], arr[i] = arr[i], arr[j]
-			}
+func quickSort(arr []int) []int {
+	if len(arr) < 2 {
+		return arr
+	}
+	start := arr[0]
+	var low, top []int
+	for _, num := range arr[1:] {
+		if num <= start {
+			low = append(low, num)
+		} else {
+			top = append(top, num)
 		}
 	}
+	res := append(quickSort(low), start)
+	res = append(res, quickSort(top)...)
+	return res
 }

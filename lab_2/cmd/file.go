@@ -1,8 +1,8 @@
 package main
 
 func findKthLargest(nums []int, k int) int {
-	nums = quickSort(nums)
-	return nums[k-1]
+
+	return quickSort(nums)[k-1]
 }
 
 func quickSort(arr []int) []int {

@@ -8,14 +8,11 @@ func findKthLargest(nums []int, k int) int {
 }
 
 func insertionSort(arr []int) {
-	s := arr[0]
-	e := arr[len(arr)-1]
+	e := len(arr)
 
-	for i := s + 1; i < e; i++ {
-		j := i
-		for j > s && (j-1) > j {
-			arr[j-1], arr[j] = arr[j], arr[j-1]
-			j--
+	for i := 1; i < e; i++ {
+		for j := 0; j < i; j++ {
+			arr[j], arr[i] = arr[i], arr[j]
 		}
 	}
 }

@@ -1,12 +1,10 @@
 package main
 
-import (
-	"sort"
-)
+import "sort"
 
 func findKthLargest(nums []int, k int) int {
 
 	sort.Ints(nums)
 
-	return nums[k-1]
+	return nums[len(nums)-k]
 }

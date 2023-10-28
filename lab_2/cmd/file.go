@@ -8,5 +8,5 @@ func findKthLargest(nums []int, k int) int {
 
 	sort.Ints(nums)
 
-	return nums[k]
+	return nums[k-1]
 }

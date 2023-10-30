@@ -1,7 +1,12 @@
 package main
 
+import "fmt"
+
 func findKthLargest(nums []int, k int) int {
 
+	if len(nums) == 0 || k-1 > len(nums) {
+		fmt.Println("Invalid length of array")
+	}
 	nums = mergeSort(nums)
 	return nums[k-1]
 }

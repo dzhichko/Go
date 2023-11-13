@@ -1,10 +1,10 @@
 package cmd
 
 type InputFile struct {
-	filename  string `yaml:"filename"`
-	substring string `yaml:"substring"`
+	Filename  string `yaml:"filename"`
+	Substring string `yaml:"substring"`
 }
 
 type Config struct {
-	files []InputFile `yaml:"files"`
+	Files []InputFile `yaml:"files"`
 }

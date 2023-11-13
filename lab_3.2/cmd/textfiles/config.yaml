@@ -1,0 +1,5 @@
+files:
+  - filename: textfiles/text1.txt
+    substring: abc
+  - filename: textfiles/text2.txt
+    substring: test
